@@ -1,6 +1,19 @@
-{% extends "layout.html" %}
-{% block content %}
-    <h1>WELCOME</h1>
-        <p><em>The roots of education … are bitter, but the fruit is sweet.
+<!doctype html>
+<title>Flaskr</title>
+<link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+<div class=page>
+  <h1>WELCOME</h1>
+    <p><em>The roots of education … are bitter, but the fruit is sweet.
            <br> Create ideas for your posts and Share with us and the world<em> </p>
-{% endblock content %}
+  <div class=metanav>
+  {% if not session.logged_in %}
+    <a href="{{ url_for('login') }}">log in</a>
+  {% else %}
+    <a href="{{ url_for('logout') }}">log out</a>
+  {% endif %}
+  </div>
+  {% for message in get_flashed_messages() %}
+    <div class=flash>{{ message }}</div>
+  {% endfor %}
+  {% block body %}{% endblock %}
+</div>
