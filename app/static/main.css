@@ -19,8 +19,6 @@ body {
   .site-header .navbar-nav .nav-link:hover {
     color: #ffffff;
   }
-
-  
   .site-header .navbar-nav .nav-link.active {
     font-weight: 500;
   }
@@ -32,11 +30,7 @@ body {
     border-radius: 3px;
     margin-bottom: 20px;
   }
-
-
-  
-
-  .article-title {
+.article-title {
     color: #444444;
   }
   
